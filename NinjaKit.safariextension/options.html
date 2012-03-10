@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>NinjaKit</title>
+<link href="css/prettify.css" rel="stylesheet" type="text/css">
+<link href="css/option_page.css" rel="stylesheet" type="text/css">
+<body>
+<ul class="tabs" id="menu_tabs">
+  <li class="basics"><a href="#basics" class="active"><span>Basics</span></a>
+  <li class="scripts"><a href="#scripts"><span>Scripts</span></a>
+  <li class="about"><a href="#about"><span>About</span></a>
+</ul>
+<div id="container">
+<div id="inner_container">
+<section id="basics" class="content">
+  <p><img src="img/sk16.png">NinjaKit icon </p>
+  <p class="sub"><input type="radio" id="status_icon_none" value="0" name="status_icon"><label for="status_icon_none">none</label></p>
+  <p class="sub"><input type="radio" id="status_icon_part" value="2" name="status_icon"><label for="status_icon_part">matched</label></p>
+  <p class="sub"><input type="radio" id="status_icon_all" value="1" name="status_icon"><label for="status_icon_all">always</label></p>
+</section>
+<section id="scripts" class="content">
+  <div id="left_box">
+    <ul id="script_list">
+    </ul>
+    <button id="add_script">Add new script</button>
+    <p>search from <a href="http://userscripts.org/">userscripts.org</a></p>
+    <fieldset id="options">
+      <h2>beautify options</h2>
+      <ul>
+        <li>
+          <select name="tabsize" id="tabsize">
+            <option value="1" selected="selected">indent with a tab character</option>
+            <option value="2">indent with 2 spaces</option>
+            <option value="3">indent with 3 spaces</option>
+            <option value="4">indent with 4 spaces</option>
+            <option value="8">indent with 8 spaces</option>
+          </select>
+        </li>
+        <li><input type="checkbox" id="braces-on-own-line" checked="checked"><label for="braces-on-own-line"> Braces on own line</label></li>
+        <li><input type="checkbox" id="preserve-newlines" checked="checked"><label for="preserve-newlines"> Preserve empty lines?</label></li>
+        <li><input type="checkbox" id="detect-packers"><label for="detect-packers"> Detect packers?</label></li>
+        <li><input type="checkbox" id="keep-array-indentation"><label for="keep-array-indentation"> Keep array indentation?</label></li>
+        <li> Font size: <span id="currentFontSize">12</span><br> 8<input type="range" id="fontSize" value="12" step="1" min="8" max="40">40</li>
+        <li><button id="getFont">get fonts</button></li>
+      </ul>
+    </fieldset>
+  </div>
+  <div id="right_box"><div></div></div>
+</section>
+<section id="about" class="content">
+  <dl>
+    <dt>Name:<dt>
+    <dd><a id='nk' href="https://chrome.google.com/webstore/detail/gpbepnljaakggeobkclonlkhbdgccfek" target="_blank">NinjaKit</a><script>
+    if(!this.chrome){document.getElementById('nk').href='https://github.com/os0x/ninjakit';}
+  </script></dd>
+    <dt>Version:<dt>
+    <dd>ver <span id="ExtensionVersion"></span></dd>
+    <dt>Author:<dt>
+    <dd><a href="http://ss-o.net/" target="_blank">os0x</a></dd>
+    <dt>License:<dt>
+    <dd><a href="http://os0x.mit-license.org/" target="_blank">The MIT license</a></dd>
+  </dl>
+</section>
+</div>
+</div>
+<script src="js/x.js"></script>
+<script src="js/tween2.js"></script>
+<script src="js/prettify.js"></script>
+<script src="js/js_highlight.js"></script>
+<script src="js/fulljslint.js"></script>
+<script src="js/get_key.js"></script>
+<script src="js/diff.js"></script>
+<script src="js/beautify.js" ></script>
+<script src="js/beautify-html.js" ></script>
+<script src="js/unpackers/javascriptobfuscator_unpacker.js" ></script>
+<script src="js/unpackers/bookmarklet_unpacker.js" ></script>
+<script src="js/unpackers/p_a_c_k_e_r_unpacker.js" ></script>
+<script src="js/options.js" defer></script>
+</body>
+</html>

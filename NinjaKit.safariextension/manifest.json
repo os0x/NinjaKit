@@ -1,0 +1,31 @@
+{
+  "name": "NinjaKit",
+  "description": "yet another greasemonkey. This is experimental extension.",
+  "version": "0.9.0",
+  "permissions": [ "tabs", "http://*/", "https://*/", "unlimitedStorage" ],
+  "background_page": "index.html",
+  "options_page":"options.html",
+  "icons": {
+    "128": "img/sk128.png",
+    "48": "img/sk48.png"
+  },
+  "page_action": {
+    "default_icon": "img/sk16.png",
+    "default_title": "NinjaKit",
+    "popup" : "popup.html"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "includes/gm-wrapper.js", "includes/grease.js"
+      ],
+      "matches": [
+        "http://*/*",
+        "https://*/*",
+        "ftp://*/*"
+      ],
+      "run_at": "document_start",
+      "all_frames":true
+    }
+  ]
+}

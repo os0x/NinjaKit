@@ -1,0 +1,34 @@
+ol{
+  white-space:pre-wrap;
+  color:#000000;
+  font-family:monospace;
+  font-size:medium;
+  line-height:1.3;
+}
+li{
+  margin:0;
+  padding:0;
+  border-bottom:1px solid transparent;
+}
+li:hover{
+  border-bottom-color:#808080;
+}
+li:empty{
+  content:" ";
+  white-space:pre;
+}
+.keyword{
+  color:#0000ff;
+}
+.objects{
+  color:#ffa500;
+}
+.literal,.spValue{
+  color:#008000;
+}
+.comment{
+  color:#ff0000;
+}
+.tabchar{
+  /*background:transparent url("' + TAB_MARK + '") no-repeat scroll 0 50%;*/
+}

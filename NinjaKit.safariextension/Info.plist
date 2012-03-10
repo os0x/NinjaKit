@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Author</key>
+	<string>os0x</string>
+	<key>Builder Version</key>
+	<string>534.52.7</string>
+	<key>CFBundleDisplayName</key>
+	<string>NinjaKit</string>
+	<key>CFBundleIdentifier</key>
+	<string>net.os0x.ninjakit</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.9.0</string>
+	<key>CFBundleVersion</key>
+	<string>0.9.0</string>
+	<key>Chrome</key>
+	<dict>
+		<key>Global Page</key>
+		<string>index.html</string>
+		<key>Toolbar Items</key>
+		<array>
+			<dict>
+				<key>Command</key>
+				<string>NinjaKit</string>
+				<key>Identifier</key>
+				<string>NinjaKit</string>
+				<key>Image</key>
+				<string>img/sk16.png</string>
+				<key>Label</key>
+				<string>NinjaKit</string>
+				<key>Palette Label</key>
+				<string>NinjaKit options</string>
+				<key>Tool Tip</key>
+				<string>NinjaKit options</string>
+			</dict>
+		</array>
+	</dict>
+	<key>Content</key>
+	<dict>
+		<key>Scripts</key>
+		<dict>
+			<key>Start</key>
+			<array>
+				<string>includes/gm-wrapper.js</string>
+				<string>includes/grease.js</string>
+			</array>
+		</dict>
+		<key>Whitelist</key>
+		<array>
+			<string>http://*/*</string>
+			<string>https://*/*</string>
+		</array>
+	</dict>
+	<key>Description</key>
+	<string>yet another greasemonkey.</string>
+	<key>ExtensionInfoDictionaryVersion</key>
+	<string>1.0</string>
+	<key>Permissions</key>
+	<dict>
+		<key>Website Access</key>
+		<dict>
+			<key>Include Secure Pages</key>
+			<true/>
+			<key>Level</key>
+			<string>All</string>
+		</dict>
+	</dict>
+	<key>Update Manifest URL</key>
+	<string>http://ss-o.net/safari/extension/NinjaKit/update.plist</string>
+	<key>Website</key>
+	<string>http://ss-o.net/</string>
+</dict>
+</plist>

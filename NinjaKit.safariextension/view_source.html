@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Greased Chrome source viewer</title>
+<link href="css/greasebox.css" rel="stylesheet" type="text/css">
+<body id="view-source">
+<h1>Greasemonkey Source viewer</h1>
+<div id="content">
+<div class="top">
+  <h2 id="script-name">loading...</h2>
+  <dl id="includes">
+  <dt>Includes:
+  </dl>
+  <dl id="excludes">
+  <dt>Excludes:
+  </dl>
+  <pre id="script-source"></pre>
+</div>
+<div class="bottom">
+  <p id="install-note">You should only install scripts from sources that you trust</p>
+  <script>if (/^ja/.test(navigator.language))document.querySelector('#install-note').textContent = '信頼できるソースからのみ、スクリプトをインストールすべきです。';</script>
+  <button id="install" disabled>Install</button>
+  <button id="cancel">cancel</button>
+</div>
+</div>
+<script src="js/js_highlight.js"></script>
+<script src="js/source_viewer.js"></script>
+</body>
+</html>
