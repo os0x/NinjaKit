@@ -64,7 +64,8 @@ if (g.chrome) {
     var name = evt.name;
     if (name === 'options') {
       if(evt.message.action === 'save') {
-        Scripts = JSON.parse(localStorage.Scripts);
+        Scripts = evt.message.scripts;
+        localStorage.Scripts = JSON.stringify(Scripts);
       } else if(evt.message.action === 'get_script') {
         evt.target.page.dispatchMessage(evt.message.action + '_callback', Scripts);
       } else if(evt.message.action === 'install') {

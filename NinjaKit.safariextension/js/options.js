@@ -10,7 +10,7 @@ if (g.chrome){
   BG = {
     Manifest:{/*version:0.1*/},
     set Scripts(scripts) {
-      safari.self.tab.dispatchMessage('options', {action:'save'});
+      safari.self.tab.dispatchMessage('options', {action:'save', scripts:scripts});
     }
   };
   //Scripts = JSON.parse(localStorage.Scripts);
@@ -216,8 +216,8 @@ function init(){
     var save = document.createElement('button');
     save.textContent = 'Save';
     save.addEventListener('click',function(){
-      var ujs = userjs_installer(area.value, styl.src, styl.original);
-      styl.source = ujs.data.source;
+      userjs_installer(area.value, styl.src, styl.original);
+      styl.source = area.value;
       message.textContent = 'Saved!';
       setTimeout(function(){message.textContent='';},3000);
 
@@ -271,6 +271,7 @@ function init(){
       styl.disabled = !styl.disabled;
       right_box.querySelector('fieldset').className = styl.disabled ? 'disabled': 'enable';
       localStorage.Scripts = JSON.stringify(Scripts);
+      BG.Scripts = Scripts;
       disable.textContent = styl.disabled ? 'enable' : 'disable';
     },false);
     disable.textContent = styl.disabled ? 'enable' : 'disable';

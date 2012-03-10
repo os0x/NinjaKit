@@ -1,7 +1,7 @@
 {
   "name": "NinjaKit",
   "description": "yet another greasemonkey. This is experimental extension.",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "permissions": [ "tabs", "http://*/", "https://*/", "unlimitedStorage" ],
   "background_page": "index.html",
   "options_page":"options.html",

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <widget xmlns="http://www.w3.org/ns/widgets"
         id="extensions:os0x-NinjaKit"
-        version="0.9.0">
+        version="0.9.1">
   <name>NinjaKit</name>
   <description>yet another greasemonkey. This is experimental extension.</description>
   <author href="http://ss-o.net/">os0x</author>
