@@ -14,3 +14,4 @@ yet another greasemonkey
 
     comming soon..
 
+[![endorse](http://api.coderwall.com/os0x/endorsecount.png)](http://coderwall.com/os0x)
