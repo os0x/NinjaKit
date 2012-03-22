@@ -13,5 +13,8 @@ yet another greasemonkey
 - Opera
 
     comming soon..
+    
+## License
+- [MIT License](http://os0x.mit-license.org/)
 
 [![endorse](http://api.coderwall.com/os0x/endorsecount.png)](http://coderwall.com/os0x)
