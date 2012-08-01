@@ -109,25 +109,26 @@ function init(){
     FontList();
   }
 
-  var currentTabSize = +Config.options.tabSize || 1;
-  var tabSize = document.getElementById('tabsize');
-  tabSize.value = currentTabSize;
-  tabSize.onclick = function() {
-    Config.options.tabSize = tabSize.value;
-    localStorage.Config = JSON.stringify(Config);
-  };
-
+  initializeOption('tabsize', 'tabSize', 1);
   initializeOption('braces-on-own-line', 'bracesOnOwnLine', true);
   initializeOption('preserve-newlines', 'preserveNewlines', true);
   initializeOption('detect-packers', 'detectPackers', false);
   initializeOption('keep-array-indentation', 'keepArrayIndentation', false);
 
   function initializeOption(id, optionKey, defaultValue) {
-    var currentValue = Config.options[optionKey] === undefined ? defaultValue : Config.options[optionKey];
-    var element = document.getElementById(id);
-    element.checked = currentValue ? true : false;
+    var currentValue, key,
+        element = document.getElementById(id);
+    if (element.tagName == "INPUT" && element.type == "checkbox") {
+      currentValue = Config.options[optionKey] === undefined ? defaultValue : Config.options[optionKey];
+      key = "checked";
+      element.checked = currentValue ? true : false;
+    } else {
+      currentValue = +Config.options[optionKey] || defaultValue;
+      key = "value";
+      element.value = currentValue;
+    }
     element.onclick = function() {
-      Config.options[optionKey] = element.checked;
+      Config.options[optionKey] = element[key];
       localStorage.Config = JSON.stringify(Config);
     }
   }
