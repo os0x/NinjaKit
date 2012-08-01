@@ -109,6 +109,14 @@ function init(){
     FontList();
   }
 
+  var currentTabSize = +Config.options.tabSize || 1;
+  var tabSize = document.getElementById('tabsize');
+  tabSize.value = currentTabSize;
+  tabSize.onclick = function() {
+    Config.options.tabSize = tabSize.value;
+    localStorage.Config = JSON.stringify(Config);
+  };
+
   var add = document.getElementById('add_script');
   var add_script = function(){
     var styl = {
