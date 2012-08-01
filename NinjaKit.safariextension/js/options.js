@@ -117,12 +117,16 @@ function init(){
     localStorage.Config = JSON.stringify(Config);
   };
 
-  var currentBracesOnNewLine = Config.options.bracesOnNewLine === undefined ? true : Config.options.bracesOnNewLine;
-  var bracesOnNewLine = document.getElementById('braces-on-own-line');
-  bracesOnNewLine.checked = currentBracesOnNewLine ? true : false;
-  bracesOnNewLine.onclick = function() {
-    Config.options.bracesOnNewLine = bracesOnNewLine.checked;
-    localStorage.Config = JSON.stringify(Config);
+  initializeOption('braces-on-own-line', 'bracesOnOwnLine', true);
+
+  function initializeOption(id, optionKey, defaultValue) {
+    var currentValue = Config.options[optionKey] === undefined ? defaultValue : Config.options[optionKey];
+    var element = document.getElementById(id);
+    element.checked = currentValue ? true : false;
+    element.onclick = function() {
+      Config.options[optionKey] = element.checked;
+      localStorage.Config = JSON.stringify(Config);
+    }
   }
 
   var add = document.getElementById('add_script');
