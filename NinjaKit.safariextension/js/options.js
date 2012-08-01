@@ -117,6 +117,14 @@ function init(){
     localStorage.Config = JSON.stringify(Config);
   };
 
+  var currentBracesOnNewLine = Config.options.bracesOnNewLine === undefined ? true : Config.options.bracesOnNewLine;
+  var bracesOnNewLine = document.getElementById('braces-on-own-line');
+  bracesOnNewLine.checked = currentBracesOnNewLine ? true : false;
+  bracesOnNewLine.onclick = function() {
+    Config.options.bracesOnNewLine = bracesOnNewLine.checked;
+    localStorage.Config = JSON.stringify(Config);
+  }
+
   var add = document.getElementById('add_script');
   var add_script = function(){
     var styl = {
