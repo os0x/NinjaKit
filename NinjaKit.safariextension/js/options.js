@@ -118,6 +118,9 @@ function init(){
   };
 
   initializeOption('braces-on-own-line', 'bracesOnOwnLine', true);
+  initializeOption('preserve-newlines', 'preserveNewlines', true);
+  initializeOption('detect-packers', 'detectPackers', false);
+  initializeOption('keep-array-indentation', 'keepArrayIndentation', false);
 
   function initializeOption(id, optionKey, defaultValue) {
     var currentValue = Config.options[optionKey] === undefined ? defaultValue : Config.options[optionKey];
