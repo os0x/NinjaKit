@@ -109,6 +109,30 @@ function init(){
     FontList();
   }
 
+  initializeOption('tabsize', 'tabSize', 1);
+  initializeOption('braces-on-own-line', 'bracesOnOwnLine', true);
+  initializeOption('preserve-newlines', 'preserveNewlines', true);
+  initializeOption('detect-packers', 'detectPackers', false);
+  initializeOption('keep-array-indentation', 'keepArrayIndentation', false);
+
+  function initializeOption(id, optionKey, defaultValue) {
+    var currentValue, key,
+        element = document.getElementById(id);
+    if (element.tagName == "INPUT" && element.type == "checkbox") {
+      currentValue = Config.options[optionKey] === undefined ? defaultValue : Config.options[optionKey];
+      key = "checked";
+      element.checked = currentValue ? true : false;
+    } else {
+      currentValue = +Config.options[optionKey] || defaultValue;
+      key = "value";
+      element.value = currentValue;
+    }
+    element.onclick = function() {
+      Config.options[optionKey] = element[key];
+      localStorage.Config = JSON.stringify(Config);
+    }
+  }
+
   var add = document.getElementById('add_script');
   var add_script = function(){
     var styl = {
