@@ -123,7 +123,7 @@ function scriptHandler(){
       };
       var top  = (window.innerHeight - 350)/2;
       var left = (window.innerWidth  - 500)/2;
-      iframe.setAttribute('style','-webkit-box-shadow: 4px 4px 4px rgba(0,0,0,0.5);border-radius:10px;background:-webkit-gradient(linear, left top, left bottom, from(rgba(246,246,246,0.7)), to(rgba(202,202,202,0.7)));position:fixed;height:350px;width:500px;left:' + left + 'px;top:' + top + 'px;');
+      iframe.setAttribute('style','-webkit-box-shadow: 4px 4px 4px rgba(0,0,0,0.5);border-radius:10px;background:-webkit-gradient(linear, left top, left bottom, from(rgba(246,246,246,0.7)), to(rgba(202,202,202,0.7)));position:fixed;z-index:9999;height:350px;width:500px;left:' + left + 'px;top:' + top + 'px;');
       function install_response(meta){
         if(g.safari){
           //safari.self.tab.dispatchMessage('ninjakit.install.meta', meta);
